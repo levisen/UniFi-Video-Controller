@@ -1,5 +1,4 @@
 FROM phusion/baseimage:0.11
-MAINTAINER pducharme@me.com
 
 # Version
 ENV version 3.10.13
@@ -31,7 +30,9 @@ RUN apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv 9DA31620334BD75
     sudo \
     tzdata \
     moreutils \
-    wget && \
+    wget \
+    procps \
+    net-tools && \
   ln -s /bin/true /usr/local/bin/systemctl && \
   apt-get install -y mongodb-org-server mongodb-org-shell && \
   rm /usr/local/bin/systemctl
